@@ -1,550 +1,407 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Contact Directory</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://apis.google.com/js/api.js"></script>
+  </head>
 
-</head>
-
-<body>
-
-
- 
+  <body>
     <div id="directory" class="container">
-        <div class="row pt-5">
-            <div class="col">
-                <div class="d-flex">
-                    <input class="mr-1" type="text" class="form-control form-control-sm" placeholder="Name"
-                        name="ipname">
-                    <input class="ml-1" type="text" class="form-control form-control-sm" placeholder="Last Name"
-                        name="iplastname">
-                    <div class="dropdown ml-auto dropleft">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16"
-                            class="bi bi-three-dots-vertical  dropdown-toggle" fill="currentColor"
-                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                        </svg>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <h6 class="dropdown-header">Configuration</h6>
-                            <a class="dropdown-item" data-toggle="modal" data-target="#myModal">Column names</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="row pt-5">
+        <div class="col">
+          <div class="d-flex">
+            <input
+              id="fullname"
+              type="text"
+              class="form-control form-control-sm mr-1 search-input"
+              placeholder="Search by name"
+              name="ipname"
+            />
+          </div>
         </div>
-        <hr>
-        <div class="row">
-            <div class="col">
-                <div class="d-flex font-weight-bold mt-n2 mb-n2">
-                    <span>1-8/35</span>
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-square-fill ml-auto mt-1"
-                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.354 10.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L6.207 7.5H11a.5.5 0 0 1 0 1H6.207l2.147 2.146z" />
-                    </svg>
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-square-fill ml-1 mt-1"
-                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm5.646 10.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z" />
-                    </svg>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col col-md-5">
-                <ul class="list-group ">
-                    <li class="list-group-item active font-weight-bold" style="text-align: center;">
-                        <strong>Directory</strong></li>
-                    <li class="list-group-item">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRLmhAaJVb5lqnJnEOuzI3gYRc1tPHByXXzsw&usqp=CAU"
-                            alt="profile pic" width="57" height="57" style="margin-top: -5px; margin-bottom: -5px;">
-                        <span class="text-dark" style="padding-left: 10px;"><strong>Doubua</strong> Terry</span>
-                    </li>
-                    <li class="list-group-item list-group-item-action bg-light">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRLmhAaJVb5lqnJnEOuzI3gYRc1tPHByXXzsw&usqp=CAU"
-                            alt="profile pic" width="57" height="57" style="margin-top: -5px; margin-bottom: -5px;">
-                        <span class="text-dark" style="padding-left: 10px;"><strong>Doubua</strong> Terry</span>
-                    </li>
-                    <li class="list-group-item list-group-item-action">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRLmhAaJVb5lqnJnEOuzI3gYRc1tPHByXXzsw&usqp=CAU"
-                            alt="profile pic" width="57" height="57" style="margin-top: -5px; margin-bottom: -5px;">
-                        <span class="text-dark" style="padding-left: 10px;"><strong>Doubua</strong> Terry</span>
-                    </li>
-                    <li class="list-group-item list-group-item-action bg-light">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRLmhAaJVb5lqnJnEOuzI3gYRc1tPHByXXzsw&usqp=CAU"
-                            alt="profile pic" width="57" height="57" style="margin-top: -5px; margin-bottom: -5px;">
-                        <span class="text-dark" style="padding-left: 10px;"><strong>Doubua</strong> Terry</span>
-                    </li>
-                    <li class="list-group-item list-group-item-action">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRLmhAaJVb5lqnJnEOuzI3gYRc1tPHByXXzsw&usqp=CAU"
-                            alt="profile pic" width="57" height="57" style="margin-top: -5px; margin-bottom: -5px;">
-                        <span class="text-dark" style="padding-left: 10px;"><strong>Doubua</strong> Terry</span>
-                    </li>
-                    <li class="list-group-item list-group-item-action bg-light">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRLmhAaJVb5lqnJnEOuzI3gYRc1tPHByXXzsw&usqp=CAU"
-                            alt="profile pic" width="57" height="57" style="margin-top: -5px; margin-bottom: -5px;">
-                        <span class="text-dark" style="padding-left: 10px;"><strong>Doubua</strong> Terry</span>
-                    </li>
-                    <li class="list-group-item list-group-item-action">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRLmhAaJVb5lqnJnEOuzI3gYRc1tPHByXXzsw&usqp=CAU"
-                            alt="profile pic" width="57" height="57" style="margin-top: -5px; margin-bottom: -5px;">
-                        <span class="text-dark" style="padding-left: 10px;"><strong>Doubua</strong> Terry</span>
-                    </li>
-                    <li class="list-group-item list-group-item-action bg-light">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRLmhAaJVb5lqnJnEOuzI3gYRc1tPHByXXzsw&usqp=CAU"
-                            alt="profile pic" width="57" height="57" style="margin-top: -5px; margin-bottom: -5px;">
-                        <span class="text-dark" style="padding-left: 10px;"><strong>Doubua</strong> Terry</span>
-                    </li>
-
-                </ul>
-            </div>
-            <div class="col">
-                <div class="card bg-light" style="width: 100%; height: auto;">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12" style="text-align: center;">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRLmhAaJVb5lqnJnEOuzI3gYRc1tPHByXXzsw&usqp=CAU"
-                                    class="rounded-circle" alt="Profile pic" width="137" height="137"
-                                    style="margin-top: 20px;">
-                                <p class=" font-weight-bolder lead" style="margin-top: 23px;">Terry Doubua</p>
-                                <p class="text-primary" style="margin-top: -15px;">Accounting</p>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-12">
-                                <p class="font-weight-bold lead">Info</p>
-                                <p>
-                                    <span class="font-weight-bold">Country: </span> France <br>
-                                    <span class="font-weight-bold">Skills & Expertise: </span> Google APIs <br>
-                                    <span class="font-weight-bold">Birth date: </span> 10-19-1950 <br>
-                                    <span class="font-weight-bold">Physical address: </span> Urb. Valparaiso
-                                </p>
-                                <br>
-                                <p class="font-weight-bold lead">Contact</p>
-                                <p>
-                                    <span class="font-weight-bold">Email: </span> kimyon@gmail.com <br>
-                                    <span class="font-weight-bold">Mobile number: </span> 98888888 <br>
-                                    <span class="font-weight-bold">Office number: </span> 052-276725 <br>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col">
-                <div class="d-flex font-weight-bold mt-n2 mb-n2">
-                    <span>1-8/35</span>
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-square-fill ml-auto mt-1"
-                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.354 10.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L6.207 7.5H11a.5.5 0 0 1 0 1H6.207l2.147 2.146z" />
-                    </svg>
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-square-fill ml-1 mt-1"
-                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm5.646 10.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z" />
-                    </svg>
-                </div>
-            </div>
-        </div>
-        <hr>
-    </div>
-
-    <div class="modal" id="myModal">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div id="logger" class="d-flex justify-content-center">
-                        <div class="card" style="width: 710px">
-                            <div class="card-body">
-                                <h1 class="card-title ">Fields name</h1>
-                                <p class="card-text">Please, type the names of your columns as shown on your own
-                                    spreadsheet</p>
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <div class="container-sm">
-                                            <div class="row justify-content-center align-items-center">
-                                                <div class="col">Names column</div>
-                                                <span class="badge badge-primary badge-pill">12</span>
-                                                <div class="col">
-                                                    <svg width="4em" height="1em" viewBox="0 0 16 16"
-                                                        class="bi bi-arrow-right-circle-fill" fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd"
-                                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.354 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z" />
-                                                    </svg>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text" class="form-control input-sm" id="">
-                                                </div>
-                                            </div>
-                                            <div class="row justify-content-center align-items-center">
-                                                <div class="col">Last Names column</div>
-                                                <div class="col">
-                                                    <svg width="4em" height="1em" viewBox="0 0 16 16"
-                                                        class="bi bi-arrow-right-circle-fill" fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd"
-                                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.354 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z" />
-                                                    </svg>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text" class="form-control input-sm" id=" ">
-                                                </div>
-                                            </div>
-                                            <div class="row justify-content-center align-items-center">
-                                                <div class="col">Office number column</div>
-                                                <div class="col">
-                                                    <svg width="4em" height="1em" viewBox="0 0 16 16"
-                                                        class="bi bi-arrow-right-circle-fill" fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd"
-                                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.354 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z" />
-                                                    </svg>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text" class="form-control input-sm" id=" ">
-                                                </div>
-                                            </div>
-                                            <div class="row justify-content-center align-items-center">
-                                                <div class="col">Mobile numbers column</div>
-                                                <div class="col">
-                                                    <svg width="4em" height="1em" viewBox="0 0 16 16"
-                                                        class="bi bi-arrow-right-circle-fill" fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd"
-                                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.354 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z" />
-                                                    </svg>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text" class="form-control input-sm" id=" ">
-                                                </div>
-                                            </div>
-                                            <div class="row justify-content-center align-items-center">
-                                                <div class="col">Email addresses column</div>
-                                                <div class="col">
-                                                    <svg width="4em" height="1em" viewBox="0 0 16 16"
-                                                        class="bi bi-arrow-right-circle-fill" fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd"
-                                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.354 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z" />
-                                                    </svg>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text" class="form-control input-sm" id=" ">
-                                                </div>
-                                            </div>
-                                            <div class="row justify-content-center align-items-center">
-                                                <div class="col">Departments column</div>
-                                                <div class="col">
-                                                    <svg width="4em" height="1em" viewBox="0 0 16 16"
-                                                        class="bi bi-arrow-right-circle-fill" fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd"
-                                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.354 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z" />
-                                                    </svg>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text" class="form-control input-sm" id=" ">
-                                                </div>
-                                            </div>
-                                            <div class="row justify-content-center align-items-center">
-                                                <div class="col">Countries column</div>
-                                                <div class="col">
-                                                    <svg width="4em" height="1em" viewBox="0 0 16 16"
-                                                        class="bi bi-arrow-right-circle-fill" fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd"
-                                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.354 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z" />
-                                                    </svg>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text" class="form-control input-sm" id=" ">
-                                                </div>
-                                            </div>
-                                            <div class="row justify-content-center align-items-center">
-                                                <div class="col">Physical address column</div>
-                                                <div class="col">
-                                                    <svg width="4em" height="1em" viewBox="0 0 16 16"
-                                                        class="bi bi-arrow-right-circle-fill" fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd"
-                                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.354 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z" />
-                                                    </svg>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text" class="form-control input-sm" id=" ">
-                                                </div>
-                                            </div>
-                                            <div class="row justify-content-center align-items-center">
-                                                <div class="col">Skills & Expertise column</div>
-                                                <div class="col">
-                                                    <svg width="4em" height="1em" viewBox="0 0 16 16"
-                                                        class="bi bi-arrow-right-circle-fill" fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd"
-                                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.354 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z" />
-                                                    </svg>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text" class="form-control input-sm" id=" ">
-                                                </div>
-                                            </div>
-                                            <div class="row justify-content-center align-items-center">
-                                                <div class="col">Picture column</div>
-                                                <div class="col">
-                                                    <svg width="4em" height="1em" viewBox="0 0 16 16"
-                                                        class="bi bi-arrow-right-circle-fill" fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd"
-                                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.354 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z" />
-                                                    </svg>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text" class="form-control input-sm" id=" ">
-                                                </div>
-                                            </div>
-                                            <div class="row justify-content-center align-items-center">
-                                                <div class="col">Birth Dates column</div>
-                                                <div class="col">
-                                                    <svg width="4em" height="1em" viewBox="0 0 16 16"
-                                                        class="bi bi-arrow-right-circle-fill" fill="currentColor"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd"
-                                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.354 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z" />
-                                                    </svg>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text" class="form-control input-sm" id=" ">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <br>
-                                <p class="card-text text-muted">Remember, we only need the names of the columns and they
-                                    must be exactly
-                                    the same as on your spreadsheet</p>
-
-                                <button type="button" class="btn btn-primary float-right" onclick="startDirectory()">
-                                    Save
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</body>
-
-<script>
-    $("#directory").hide();
-
-    startDirectory = () => {
-        $("#logger").remove();
-        triggerDirectory();
-    }
-
-
-
-    triggerDirectory = () => {
-        startLoadBlocks();
-        stopLoadBlocks();
-        $("#directory").show();
-    }
-
-    var sheetValues;
-    var lang = window.navigator.language.slice(0, 2);
-
-
-    async function initClient() {
-        
-        response = await renderRange();
-        sheetValues = response.values;
-
-    }
-
-    async function renderRange() {
-        var response = fetchContent
-        if (response === null) {
-            wrongResponse();
-            return
-        }
-        return response;
-    }
-
-    var fetchContent = async (sId, rango) => {
-        try {
-            const response = awaitawait BPSdk.dataSource.getData();
-            return response;
-        } catch (err) {
-            showMessage(err.result, 'error');
-            return null;
-        }
-    }
-
-    startLoadBlocks = () => {
-        $("body").append(`
-        <div class="row">
-        <div class="col-md-8 offset-md-2">
-        <div class="ld-blocks">
-        <div class="ld-container">
-            <div style='left:438px;top:150px;animation-delay:0s'></div>
-            <div style='left:480px;top:150px;animation-delay:0.13297872340425532s'></div>
-            <div style='left:522px;top:150px;animation-delay:0.26595744680851063s'></div>
-            <div style='left:438px;top:192px;animation-delay:0.9308510638297872s'></div>
-            <div style='left:522px;top:192px;animation-delay:0.39893617021276595s'></div>
-            <div style='left:438px;top:234px;animation-delay:0.7978723404255319s'></div>
-            <div style='left:480px;top:234px;animation-delay:0.6648936170212766s'></div>
-            <div style='left:522px;top:234px;animation-delay:0.5319148936170213s'></div>
-        </div>
-    </div>
-    </div>
-    </div>
-    `)
-    }
-
-    stopLoadBlocks = (state) => {
-        $('.ld-blocks').remove()
-    }
-
-    const showMessage = (response, type) => {
-        switch (response.error.code) {
-            case 404:
-                if (lang === 'es') {
-                    swal("I didn't found anything", 'It appears that the Sheet ID is not valid or does not exist!, try again or use another one', type)
-                    break
-                }
-                else {
-                    swal("I didn't found anything", 'It appears that the Sheet ID is not valid or does not exist!, try again or use another one', type)
-                    break
-                }
-
-            case 400:
-                if (lang === 'es') {
-                    swal("Rango Inválido", 'El rango especificado es incorrecto o no es válido', type)
-                    break
-                }
-                else {
-                    swal("Invalid Range", "Something is wrong with the specified range", type)
-                    break
-                }
-
-            case 401:
-                if (lang === 'es') {
-                    swal("Tiempo de espera agotado", "No pudimos ponernos en contacto con la fuente")
-                    break
-                }
-                else {
-                    swal("Access time out", "We couldn't reach the source")
-                    break
-                }
-
-
-            default:
-                swal('Error', "Please, contact BigPictures support (info@bigpictures.co)")
-        }
-    }
-
-    wrongResponse = (message) => {
-        $('.ld-blocks').remove();
-
-        if (lang === 'es') {
-            $('body').append(`
-      <div class="jumbotron">
-        <h1 class="display-4">Opps!, hubo un problema</h1>
-        <p class="lead">Corrige las variables e intenta nuevamente</p>
-        <hr class="my-4">
       </div>
-      `)
-        }
-        else {
-            $('body').append(`
-      <div class="jumbotron">
-        <h1 class="display-4">Opps!, something went wrong</h1>
-        <p class="lead">Please, review your code and try again</p>
-        <hr class="my-4">
+      <hr />
+      <div class="row">
+        <div class="col">
+          <div class="d-flex font-weight-bold mt-n2 mb-n2">
+            <span id="pages">1/</span>
+            <svg
+              id="previous"
+              width="1em"
+              height="1em"
+              viewbox="0 0 16 16"
+              class="bi bi-arrow-left-square-fill ml-auto mt-1"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.354 10.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L6.207 7.5H11a.5.5 0 0 1 0 1H6.207l2.147 2.146z"
+              />
+            </svg>
+            <svg
+              id="next"
+              width="1em"
+              height="1em"
+              viewbox="0 0 16 16"
+              class="bi bi-arrow-right-square-fill ml-1 mt-1"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm5.646 10.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
-      `)
-        }
+      <hr />
+      <div class="row">
+        <div class="col col-md-5">
+          <div
+              class="list-group-item active font-weight-bold"
+              style="text-align: center;"
+            >
+              <strong>Directory</strong>
+          </div>
+          <ul id="contact-list" class="list-group ">
 
+
+          </ul>
+        </div>
+        <div class="col">
+          <div class="card bg-light" style="width: 100%; height: auto;">
+            <div class="container">
+              <div class="row">
+                <div class="col-12" style="text-align: center;">
+                  <img
+                    id="profile-pic"
+                    src="https://www.onap.org/wp-content/uploads/sites/20/2017/05/Blank_woman_placeholder.svg_-500x500.png"
+                    class="rounded-circle"
+                    alt="Profile pic"
+                    width="137"
+                    height="137"
+                    style="margin-top: 20px;"
+                  />
+                  <p id="full-name" class=" font-weight-bolder lead" style="margin-top: 23px;">
+                    
+                  </p>
+                  <p id="profession" class="text-primary" style="margin-top: -15px;">
+                    &lt-- Select a user from the list
+                  </p>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-12">
+                  <p class="font-weight-bold lead">Info</p>
+                  <p>
+                    <span class="font-weight-bold">Country: </span> 
+                    <span id="country" > </span>
+                    <br />
+              
+                    <span  class="font-weight-bold">Birth date: </span>
+                    <span id="bd"></span>
+                    <br />
+                  </p>
+                  <br />
+                  <p class="font-weight-bold lead">Contact</p>
+                  <p>
+                
+                    <span  class="font-weight-bold">  Email: </span>
+                    <span id="email">k</span> 
+                     <br />
+                    <span class="font-weight-bold"> Mobile number: </span>
+                    <span id="mn"></span> 
+                     <br />
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+    </div>
+  </body>
+
+  <script>
+    
+    
+       async function getData() {
+        const response = await BPSdk.dataSource.getData();
+        return response.values;
+      }
+
+    
+    $(document).ready(async function() {
+
+      const dataSet = await getData();
+    console.log(dataSet);
+      const headers = dataSet.shift();
+      const indexes = headers.reduce((indexObj, value, index) => {
+        indexObj[value] = index;
+        return indexObj;
+      },{})
+
+      const numOfPages = getNumOfPages(dataSet);
+      const currentPage = 1;
+      const next = nextPage(numOfPages);
+      
+      
+      //Register next and previous
+      $("#next").click(function() {
+        const page = next(true);
+        $("#pages").text(`${page}/${numOfPages}`)
+        const pageContent = getItemForPage(dataSet, page);
+        renderContactList(pageContent, indexes);
+      });
+      
+      $("#previous").click(function() {
+        const page = next(false);
+        $("#pages").text(`${page}/${numOfPages}`);
+        const pageContent = getItemForPage(dataSet, page);
+        renderContactList(pageContent, indexes);
+      });
+      
+      $("#pages").text(`${currentPage}/${numOfPages}`)
+      const items = getItemForPage(dataSet, currentPage);
+      renderContactList(items, indexes);
+    
+      $("#fullname").on('input', function() {
+        filterUser($(this).val(), items, indexes);
+      });
+      
+    })
+    
+    const regex = /(?:http[s]*\:\/\/)*(.*?)\.(?=[^\/]*\..{2,5})/i;
+    
+    const isTheValueAnURL = (url) => {
+  	  const parts = (url).toString().split('.');
+  	  if(parts[0].indexOf('http') >=0 ) return true;
+  	  return false;
     }
+    
+    const detectURL = (url) => {
+  	  let theUrl;
+      subdomain = url.match(regex);
+  	  domain = url.split('.')
+      if(subdomain !== null){
+        console.log(subdomain[1]);
+        if(subdomain[1] === "drive" && domain[1] === "google") {
+  			theUrl = getImgSrcUrlFromDriveUrl(url);
+  		  } else {
+  			  theUrl = url;
+  		  }
+      } else {
+  		theUrl =  url;
+  	  }
+      return theUrl;
+    }
+    
+    function getImgSrcUrlFromDriveUrl(url) {
+  	  var id = getIdFromUrl(url);
+  	  var prefix = 'https://drive.google.com/uc?export=view&id=';
+  	  return prefix + id; 
+    }
+    function getIdFromUrl(url) { 
+  	  return url.match(/[-\w]{20,}/); // some Drive files have 22 chars IDs !
+	  }
+    
+    function nextPage(numOfPages) {
+      var currentPage = 1;
+      return (order)=> {
+        if(order) {
+          if (currentPage >= numOfPages) {
+            currentPage = 1;
+            return currentPage;
+          }
+          currentPage += 1;
+          return currentPage;
+        } else {
+          if (currentPage <= numOfPages) {
+            currentPage = 1;
+            return currentPage;
+          }
+          currentPage -= 1;
+          return currentPage;
+        }
+      }
+    }
+    
+    
+    
+      
+    function getNumOfPages(dataSet) {
+      return Math.ceil(dataSet.length / 8);
+      
+    }
+    
+    function getItemForPage(dataSet, page) {
+      const startIndex = (page - 1) * 8;
+      const endIndex = page * 8
+      return dataSet.slice(startIndex, endIndex);
+    }
+   
+   function getPIC(row, picIndex){
+     let picValue = row[picIndex];
+     let url;
+       if(picValue === undefined || picValue === null) {
+         return 'https://www.onap.org/wp-content/uploads/sites/20/2017/05/Blank_woman_placeholder.svg_-500x500.png'
+       }
+        if (isTheValueAnURL(picValue)){
+          url = detectURL(picValue)
+        }; 
+        return url;
+   }
+    
+   function renderContactList(list, indexes) {
+     $('#contact-list').empty();
+     const nameIndex = indexes['{{fullnameColumn}}'];
+     const profIndex = indexes['{{professionColumn}}'];
+     const countryIndex = indexes['{{countryColumn}}'];
+     const birthdayindex = indexes['{{birthdayColumn}}'];
+     const emailIndex = indexes['{{emailColumn}}'];
+     const phoneIndex = indexes['{{phoneColumn}}'];
+     const picIndex = indexes['{{profilePicColumn}}'];
 
-</script>
+     jQuery.each(list, (index, row) => {
+				const url = getPIC(row, picIndex);
+        $('#contact-list').append(`
+          <li 
+            id="${index}"
+            class="list-group-item">
+            <img 
+              src=${url}
+              alt="profile pic" 
+              width="57" height="57" 
+              style="margin-top: -5px; 
+              margin-bottom: -5px;"> 
+              <span class="text-dark" style="padding-left: 10px;">
+                ${row[nameIndex]}
+              </span> 
+          </li>`);
+
+    		$("#"+ index).click(function(){
+        			console.log('clicked');
+          $(".list-group-item--selected").removeClass("list-group-item--selected");
+          $("#"+ index).toggleClass('list-group-item--selected');
+          $("#full-name").text(`${row[nameIndex]}`);
+          $("#profession").text(`${row[profIndex]}`);
+          $("#country").text(`${row[countryIndex]}`);
+          $("#bd").text(`${row[birthdayindex]}`);
+          $("#email").text(`${row[emailIndex]}`);
+          $("#mn").text(`${row[phoneIndex]}`);
+    			$("#profile-pic").attr('src',url);
+        })
+        //selectUser(index,row,url);
+
+      }); 
+   } 
+   function filterUser(value, dataSet, indexes) {
+     const searchTerm = value.toLowerCase();
+     const filtered = dataSet.filter(row => {
+       const fullName = `${row[0].toLowerCase()} ${row[1].toLowerCase()}`;
+       
+       return fullName.indexOf(value) !== -1;
+     })
+     console.log(filtered);
+     renderContactList(filtered, indexes);
+     
+     
+   }
+
+   function selectUser(index, row,url) {
+
+        $("#"+ index + row[0]).click(function(){
+          $(".list-group-item--selected").removeClass("list-group-item--selected");
+          $("#"+ index + row[0]).toggleClass('list-group-item--selected');
+          $("#full-name").text(`${row[0]} ${row[1]}`);
+          $("#profession").text(`${row[4]}`);
+          $("#country").text(`${row[3]}`);
+          $("#bd").text(`${row[5]}`);
+          $("#email").text(`${row[6]}`);
+          $("#mn").text(`${row[7]}`);
+    			$("#profile-pic").attr('src',url);
+        })
+   }
 
 
-<style>
+  </script>
+
+  <style>
     @keyframes ld-container {
-        0% {
-            background: #666ce8
-        }
+      0% {
+        background: #666ce8;
+      }
 
-        12.5% {
-            background: #666ce8
-        }
+      12.5% {
+        background: #666ce8;
+      }
 
-        12.625% {
-            background: #1f2264
-        }
+      12.625% {
+        background: #1f2264;
+      }
 
-        100% {
-            background: #1f2264
-        }
+      100% {
+        background: #1f2264;
+      }
     }
 
     .ld-container div {
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        background: #1f2264;
-        animation: ld-container 1.0638297872340425s linear infinite;
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: #1f2264;
+      animation: ld-container 1.0638297872340425s linear infinite;
     }
 
     .ld-blocks {
-        width: 700px;
-        height: 400px;
-        display: inline-block;
-        overflow: hidden;
-        background: #ffffff;
+      width: 700px;
+      height: 400px;
+      display: inline-block;
+      overflow: hidden;
+      background: #ffffff;
     }
 
     .ld-container {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        transform: translateZ(0) scale(1);
-        backface-visibility: hidden;
-        transform-origin: 0 0;
-        /* see note above */
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform: translateZ(0) scale(1);
+      backface-visibility: hidden;
+      transform-origin: 0 0;
+      /* see note above */
     }
 
     .ld-container div {
-        box-sizing: content-box;
+      box-sizing: content-box;
     }
 
     thead input {
-        width: 100%;
+      width: 100%;
     }
-</style>
-
+    
+    .list-group-item {
+      cursor: pointer;
+    }
+    .list-group-item--selected {
+      background-color: #cecece;
+    }
+    .search-input {
+      width: 50%;
+      outline: none;
+    }
+  </style>
 </html>
+
