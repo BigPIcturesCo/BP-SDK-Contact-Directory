@@ -12,126 +12,98 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <div id="directory" class="container">
-      <div class="row pt-5">
-        <div class="col">
-          <div class="d-flex">
-            <input
-              id="fullname"
-              type="text"
-              class="form-control form-control-sm mr-1 search-input"
-              placeholder="Search by name"
-              name="ipname"
-            />
-          </div>
-        </div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col">
-          <div class="d-flex font-weight-bold mt-n2 mb-n2">
-            <span id="pages">1/</span>
-            <svg
-              id="previous"
-              width="1em"
-              height="1em"
-              viewbox="0 0 16 16"
-              class="bi bi-arrow-left-square-fill ml-auto mt-1"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.354 10.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L6.207 7.5H11a.5.5 0 0 1 0 1H6.207l2.147 2.146z"
+    
+    <div id="directory" class="container-fluid" >
+<!--       <div class="row pt-5" style="padding-bottom: 12px;"> -->
+      <div class="" style="width: 664px; display:flex;">
+        <div class="" style="width:320px;">
+          <br>
+          <div class="row" style="padding-left: 24px;">
+            <div class="d-flex" style="position: relative;">
+              <i 
+                class="material-icons"
+                style="position: absolute;left: 10px;top:10px; color:#C2C2C2;"
+              >
+                search
+              </i>
+              <input
+                id="fullname"
+                type="text"
+                class="form-control form-control-sm mr-1 search-input"
+                placeholder="Search"
+                name="ipname"
               />
-            </svg>
-            <svg
-              id="next"
-              width="1em"
-              height="1em"
-              viewbox="0 0 16 16"
-              class="bi bi-arrow-right-square-fill ml-1 mt-1"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm5.646 10.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z"
-              />
-            </svg>
+            </div>
+            
           </div>
+          <div class="row" style="margin-top: 12px;">
+            <ul id="contact-list" class="list-group "> </ul>
+          </div>
+                    
         </div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col col-md-5">
-          <div
-              class="list-group-item active font-weight-bold"
-              style="text-align: center;"
-            >
-              <strong>Directory</strong>
-          </div>
-          <ul id="contact-list" class="list-group ">
+        <div class="" style="width: 344px; background-color: #FBFBFE">
+          <div class="" style="height: 432px;  display:flex; flex-direction: column;">
 
 
-          </ul>
-        </div>
-        <div class="col">
-          <div class="card bg-light" style="width: 100%; height: auto;">
-            <div class="container">
-              <div class="row">
-                <div class="col-12" style="text-align: center;">
+                <div class="" style="padding-left: 106px;">
                   <img
                     id="profile-pic"
                     src="https://www.onap.org/wp-content/uploads/sites/20/2017/05/Blank_woman_placeholder.svg_-500x500.png"
                     class="rounded-circle"
                     alt="Profile pic"
-                    width="137"
-                    height="137"
-                    style="margin-top: 20px;"
+                    width="132"
+                    height="132"
+                    style="margin-top: 30px; border-radius: 50%; object-fit: cover"
                   />
-                  <p id="full-name" class=" font-weight-bolder lead" style="margin-top: 23px;">
-                    
-                  </p>
-                  <p id="profession" class="text-primary" style="margin-top: -15px;">
+
+                  <p id="nochosen" class="text-primary" style="margin-top: -15px;">
                     &lt-- Select a user from the list
                   </p>
                 </div>
-              </div>
-              <hr />
-              <div class="row">
-                <div class="col-12">
-                  <p class="font-weight-bold lead">Info</p>
-                  <p>
-                    <span class="font-weight-bold">Country: </span> 
-                    <span id="country" > </span>
-                    <br />
-              
-                    <span  class="font-weight-bold">Birth date: </span>
-                    <span id="bd"></span>
-                    <br />
+             
+                <div class="" style="padding-left: 56px;">
+                  <p id="full-name" class="" style="margin-top: 54px;margin-bottom: 26px;;color: #474747; font-size:18px;">
+                    
                   </p>
-                  <br />
-                  <p class="font-weight-bold lead">Contact</p>
-                  <p>
-                
-                    <span  class="font-weight-bold">  Email: </span>
-                    <span id="email">k</span> 
-                     <br />
-                    <span class="font-weight-bold"> Mobile number: </span>
-                    <span id="mn"></span> 
-                     <br />
-                  </p>
-                </div>
+                  <div style="display:flex;">
+                    <i class="material-icons">work</i>
+                    <p id="profession" style="margin-left: 8px;color:#7a7a7a; font-size:14px;"> 
+                    </p>
+                  </div>
+                  <div style="display:flex;">
+                    <i class="material-icons material-icons-outlined">email</i>
+                    <p id="email" style="margin-left: 8px;color:#7a7a7a; font-size:14px;"> 
+                    </p>
+                  </div>
+                  <div style="display:flex;">
+                    <i class="material-icons">phone_enabled</i>
+                    <p id="mn" style="margin-left: 8px; color:#7a7a7a; font-size:14px;"> 
+                    </p>
+                  </div>
+                  
+                  <div style="display:flex;">
+                    <i class="material-icons">cake</i>
+                    <p id="bd" style="margin-left: 8px; color:#7a7a7a; font-size:14px;"> 
+                    </p>
+                  </div>
+                  
+<!--                   <div style="display:flex;">
+                    <i class="material-icons">flag</i>
+                    <p id="country" style="margin-left: 8px;"> 
+                    </p>
+                  </div> -->
+
               </div>
-            </div>
           </div>
         </div>
+        
       </div>
-      <hr />
     </div>
   </body>
 
@@ -141,6 +113,26 @@
        async function getData() {
         const response = await BPSdk.dataSource.getData();
         return response.values;
+
+        //uncomment this for testing
+
+        // const data = [
+        // ['First Name', 'Last Name', 'Directory', 'Email', 'Address', 'Phone Number', 'Country', 'Department', 'Skills & Expertise', 'Picture', 'About', 'Weight', 'Birth'],
+        // ['Sasha','ROUX','','sasha.roux@demo.com','','01 23 45 67 89','England,Accounting', 'Google Apps','','https://sites.google.com/a/revevol.eu/awesome-table-demo/female%20%2838%29.jpg','','49.8','07-13-1992'],
+        // ['Sasha','ROUX','','sasha.roux@demo.com','','01 23 45 67 89','England,Accounting', 'Google Apps','','https://sites.google.com/a/revevol.eu/awesome-table-demo/female%20%2838%29.jpg','','49.8','07-13-1992'],
+        // ['Sasha','ROUX','','sasha.roux@demo.com','','01 23 45 67 89','England,Accounting', 'Google Apps','','https://sites.google.com/a/revevol.eu/awesome-table-demo/female%20%2838%29.jpg','','49.8','07-13-1992'],
+        // ['Sasha','ROUX','','sasha.roux@demo.com','','01 23 45 67 89','England,Accounting', 'Google Apps','','https://sites.google.com/a/revevol.eu/awesome-table-demo/female%20%2838%29.jpg','','49.8','07-13-1992'],
+        // ['Sasha','ROUX','','sasha.roux@demo.com','','01 23 45 67 89','England,Accounting', 'Google Apps','','https://sites.google.com/a/revevol.eu/awesome-table-demo/female%20%2838%29.jpg','','49.8','07-13-1992'],
+        // ['Sasha','ROUX','','sasha.roux@demo.com','','01 23 45 67 89','England,Accounting', 'Google Apps','','https://sites.google.com/a/revevol.eu/awesome-table-demo/female%20%2838%29.jpg','','49.8','07-13-1992'],
+        // ['Sasha','ROUX','','sasha.roux@demo.com','','01 23 45 67 89','England,Accounting', 'Google Apps','','https://sites.google.com/a/revevol.eu/awesome-table-demo/female%20%2838%29.jpg','','49.8','07-13-1992'],
+        // ['Sasha','ROUX','','sasha.roux@demo.com','','01 23 45 67 89','England,Accounting', 'Google Apps','','https://sites.google.com/a/revevol.eu/awesome-table-demo/female%20%2838%29.jpg','','49.8','07-13-1992'],
+        // ['Sasha','ROUX','','sasha.roux@demo.com','','01 23 45 67 89','England,Accounting', 'Google Apps','','https://sites.google.com/a/revevol.eu/awesome-table-demo/female%20%2838%29.jpg','','49.8','07-13-1992'],
+        // ['Sasha','ROUX','','sasha.roux@demo.com','','01 23 45 67 89','England,Accounting', 'Google Apps','','https://sites.google.com/a/revevol.eu/awesome-table-demo/female%20%2838%29.jpg','','49.8','07-13-1992'],
+        // ['Sasha','ROUX','','sasha.roux@demo.com','','01 23 45 67 89','England,Accounting', 'Google Apps','','https://sites.google.com/a/revevol.eu/awesome-table-demo/female%20%2838%29.jpg','','49.8','07-13-1992'],
+        // ['Sasha','ROUX','','sasha.roux@demo.com','','01 23 45 67 89','England,Accounting', 'Google Apps','','https://sites.google.com/a/revevol.eu/awesome-table-demo/female%20%2838%29.jpg','','49.8','07-13-1992']
+        // ]
+
+        // return data
       }
 
     
@@ -177,6 +169,7 @@
       $("#pages").text(`${currentPage}/${numOfPages}`)
       const items = getItemForPage(dataSet, currentPage);
       renderContactList(items, indexes);
+      $("#0").trigger("click");
     
       $("#fullname").on('input', function() {
         filterUser($(this).val(), items, indexes);
@@ -187,36 +180,40 @@
     const regex = /(?:http[s]*\:\/\/)*(.*?)\.(?=[^\/]*\..{2,5})/i;
     
     const isTheValueAnURL = (url) => {
-  	  const parts = (url).toString().split('.');
-  	  if(parts[0].indexOf('http') >=0 ) return true;
-  	  return false;
+      console.log('url is', url);
+      const parts = (url).toString().split('.');
+      if(parts[0].indexOf('http') >=0 || parts[0].includes('active_storage')) return true;
+      return false;
     }
     
     const detectURL = (url) => {
-  	  let theUrl;
+      let theUrl;
       subdomain = url.match(regex);
-  	  domain = url.split('.')
+      domain = url.split('.')
+      console.log('subdomain',subdomain)
+      console.log('domain', domain)
       if(subdomain !== null){
-        console.log(subdomain[1]);
+    
+        console.log('subdomain is',subdomain[1]);
         if(subdomain[1] === "drive" && domain[1] === "google") {
-  			theUrl = getImgSrcUrlFromDriveUrl(url);
-  		  } else {
-  			  theUrl = url;
-  		  }
+        theUrl = getImgSrcUrlFromDriveUrl(url);
+        } else {
+          theUrl = url;
+        }
       } else {
-  		theUrl =  url;
-  	  }
+      theUrl =  url;
+      }
       return theUrl;
     }
     
     function getImgSrcUrlFromDriveUrl(url) {
-  	  var id = getIdFromUrl(url);
-  	  var prefix = 'https://drive.google.com/uc?export=view&id=';
-  	  return prefix + id; 
+      var id = getIdFromUrl(url);
+      var prefix = 'https://drive.google.com/uc?export=view&id=';
+      return prefix + id; 
     }
     function getIdFromUrl(url) { 
-  	  return url.match(/[-\w]{20,}/); // some Drive files have 22 chars IDs !
-	  }
+      return url.match(/[-\w]{20,}/); // some Drive files have 22 chars IDs !
+    }
     
     function nextPage(numOfPages) {
       var currentPage = 1;
@@ -248,13 +245,16 @@
     }
     
     function getItemForPage(dataSet, page) {
-      const startIndex = (page - 1) * 8;
-      const endIndex = page * 8
-      return dataSet.slice(startIndex, endIndex);
+      //The pagination is not user anymore
+      // const startIndex = (page - 1) * 8;
+      // const endIndex = page * 8
+      // return dataSet.slice(startIndex, endIndex);
+      return dataSet
     }
    
    function getPIC(row, picIndex){
      let picValue = row[picIndex];
+     console.log('picValue is ', picValue);                                       
      let url;
        if(picValue === undefined || picValue === null) {
          return 'https://www.onap.org/wp-content/uploads/sites/20/2017/05/Blank_woman_placeholder.svg_-500x500.png'
@@ -267,6 +267,7 @@
     
    function renderContactList(list, indexes) {
      $('#contact-list').empty();
+
      const nameIndex = indexes['{{fullnameColumn}}'];
      const profIndex = indexes['{{professionColumn}}'];
      const countryIndex = indexes['{{countryColumn}}'];
@@ -275,8 +276,24 @@
      const phoneIndex = indexes['{{phoneColumn}}'];
      const picIndex = indexes['{{profilePicColumn}}'];
 
+
+     //Reference for test
+    // ['First Name', 'Last Name', 'Directory', 'Email', 'Address', 'Phone Number', 'Country', 'Department', 'Skills & Expertise', 'Picture', 'About', 'Weight', 'Birth', 'date', 'Search'],
+    
+      //uncomment this for test
+     // const nameIndex = 0;
+     // const profIndex = 8;
+     // const countryIndex = 6;
+     // const birthdayindex = 12;
+     // const emailIndex = 3;
+     // const phoneIndex = 5;
+     // const picIndex = 9;
+
+                                       
+     console.log('picIndex is', picIndex);
+
      jQuery.each(list, (index, row) => {
-				const url = getPIC(row, picIndex);
+        const url = getPIC(row, picIndex);
         $('#contact-list').append(`
           <li 
             id="${index}"
@@ -284,28 +301,23 @@
             <img 
               src=${url}
               alt="profile pic" 
-              width="57" height="57" 
-              style="margin-top: -5px; 
+              width="40" height="40" 
+              style="background-color: white; border-radius:50%; object-fit: cover"; 
               margin-bottom: -5px;"> 
-              <span class="text-dark" style="padding-left: 10px;">
+            <section style="padding-left: 16px;">
+              <span class="" style="color: #7a7a7a; font-size:14px;">
                 ${row[nameIndex]}
-              </span> 
+              </span>
+              <p style="color: #b3b3b3; font-size:13px;">
+                ${row[emailIndex]}
+              </p>
+            <section>
           </li>`);
 
-    		$("#"+ index).click(function(){
-        			console.log('clicked');
-          $(".list-group-item--selected").removeClass("list-group-item--selected");
-          $("#"+ index).toggleClass('list-group-item--selected');
-          $("#full-name").text(`${row[nameIndex]}`);
-          $("#profession").text(`${row[profIndex]}`);
-          $("#country").text(`${row[countryIndex]}`);
-          $("#bd").text(`${row[birthdayindex]}`);
-          $("#email").text(`${row[emailIndex]}`);
-          $("#mn").text(`${row[phoneIndex]}`);
-    			$("#profile-pic").attr('src',url);
-        })
-        //selectUser(index,row,url);
-
+        selectUser(
+          index,row, row[nameIndex], 
+          row[profIndex], row[countryIndex], 
+          row[birthdayindex], row[emailIndex], row[phoneIndex], url);
       }); 
    } 
    function filterUser(value, dataSet, indexes) {
@@ -321,25 +333,34 @@
      
    }
 
-   function selectUser(index, row,url) {
-
-        $("#"+ index + row[0]).click(function(){
+   function selectUser(index, row, fullname, pro, ctr, bd, email, mn,url) {
+          $("#nochosen").text("");
+          $("#"+ index).click(function(){
           $(".list-group-item--selected").removeClass("list-group-item--selected");
-          $("#"+ index + row[0]).toggleClass('list-group-item--selected');
-          $("#full-name").text(`${row[0]} ${row[1]}`);
-          $("#profession").text(`${row[4]}`);
-          $("#country").text(`${row[3]}`);
-          $("#bd").text(`${row[5]}`);
-          $("#email").text(`${row[6]}`);
-          $("#mn").text(`${row[7]}`);
-    			$("#profile-pic").attr('src',url);
+          $("#"+ index).toggleClass('list-group-item--selected');
+          $("#full-name").text(`${fullname}`);
+          $("#profession").text(`${pro}`);
+          $("#country").text(`${ctr}`);
+          $("#bd").text(`${bd}`);
+          $("#email").text(`${email}`);
+          $("#mn").text(`${mn}`);
+          $("#profile-pic").attr('src',url);    
         })
    }
 
 
   </script>
 
-  <style>
+<style>
+    #fullname {
+      width: 280px;
+      height: 40px;
+      border-radius: 6px;
+      border: 1px solid #E1DDEE;
+      padding-left: 48px;
+      color: #C2C2C2;
+      outline: none;
+    }
     @keyframes ld-container {
       0% {
         background: #666ce8;
@@ -392,16 +413,26 @@
       width: 100%;
     }
     
+    .list-group {
+      height: 368px;
+      overflow: auto;
+    }
     .list-group-item {
+      display: flex;
+      width: 320px;
+      height: 72px;
       cursor: pointer;
+      border: 0;
+      border-bottom: 1px solid #E1DDEE;
     }
     .list-group-item--selected {
-      background-color: #cecece;
+      background-color: #f1f1f1;
     }
     .search-input {
       width: 50%;
       outline: none;
     }
   </style>
-</html>
 
+
+</html>
