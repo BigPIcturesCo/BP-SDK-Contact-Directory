@@ -62,11 +62,11 @@ Una vez que se guarda, la app queda inmediatamente pendiente de aprobación. Par
 Para el próximo paso, es necesario que verifiques que en el proyecto [big-pictures](https://github.com/BigPIcturesCo/big-pictures) que clonaste en tu máquina, estén las siguientes variables de ambiente en el archivo .env.development:
 
 `
-GOOGLE_CLIENT_SECRET=wNLROWgTCvrokVuucBCMB04s
+GOOGLE_CLIENT_SECRET=*
 `
 
 `
-GOOGLE_CLIENT_ID=344628950480-0ogag180isto80lsq18rdoqboipvh6fm.apps.googleusercontent.com
+GOOGLE_CLIENT_ID=*
 `
 
 ## Instanciar la App Deck en una vista como PLATFORM OWNER
