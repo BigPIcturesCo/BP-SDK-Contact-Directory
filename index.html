@@ -20,12 +20,11 @@
   <body>
     
     <div id="directory" class="container-fluid" >
-<!--       <div class="row pt-5" style="padding-bottom: 12px;"> -->
-      <div class="" style="width: 664px; display:flex;">
-        <div class="" style="width:320px;">
+      <div class="" style="width: 100%; display:flex; flex-direction: row;">
+        <div class="flex" style="width: 50%;">
           <br>
-          <div class="row" style="padding-left: 24px;" id="search-element">
-            <div class="d-flex" style="position: relative;">
+          <div class="row" style="margin-right: 50%;" id="search-element">
+            <div class="d-flex" style="position: relative; width: 100%;">
               <i 
                 class="material-icons"
                 style="position: absolute;left: 10px;top:10px; color:#C2C2C2;"
@@ -40,77 +39,65 @@
                 name="ipname"
               />
             </div>
-            
           </div>
-          <div class="row" style="margin-top: 12px;">
-            <ul id="contact-list" class="list-group "> </ul>
-          </div>
-                    
+          <div class="row" style="margin-top: 12px; width: 100%;">
+            <ul id="contact-list" class="list-group " style="width: 100%;"> </ul>
+          </div>         
         </div>
-        <div class="" style="width: 344px; background-color: #FBFBFE">
-          <div class="" style="height: 432px;  display:flex; flex-direction: column;">
+        <div class="flex" style="width: 50%; background-color: #FBFBFE">
+          <div class="" style="height: 100%;  display:flex; flex-direction: column;">
+            <div class="" style="text-align: center;">
+              <img
+                id="profile-pic"
+                src="https://www.onap.org/wp-content/uploads/sites/20/2017/05/Blank_woman_placeholder.svg_-500x500.png"
+                class="rounded-circle"
+                alt="Profile pic"
+                width="132"
+                height="132"
+                style="margin-top: 30px; border-radius: 50%; object-fit: cover"
+              />
 
-
-                <div class="" style="padding-left: 106px;">
-                  <img
-                    id="profile-pic"
-                    src="https://www.onap.org/wp-content/uploads/sites/20/2017/05/Blank_woman_placeholder.svg_-500x500.png"
-                    class="rounded-circle"
-                    alt="Profile pic"
-                    width="132"
-                    height="132"
-                    style="margin-top: 30px; border-radius: 50%; object-fit: cover"
-                  />
-
-                  <p id="nochosen" class="text-primary" style="margin-top: -15px;">
-                    &lt-- Select a user from the list
-                  </p>
-                </div>
-             
-                <div class="" style="padding-left: 56px;">
-                  <div style="display:flex;" id="name-container">
-                    <i class="material-icons" style="margin-top: 56px;margin-bottom: 26px;" id="nameIcon">person</i>
-                    <p id="nameDescription" style="margin-left: 8px;color:#7a7a7a; font-size:18px; margin-top: 54px;margin-bottom: 26px;">Nombre: </p>
-                    <p id="full-name" class="" style="margin-left: 8px; margin-top: 54px;margin-bottom: 26px; color: #474747; font-size:18px;">
-                    </p>
-                  </div>
-                    
-                  <div style="display:flex;" id="profession-container">
-                    <i class="material-icons" id="professionIcon">work</i>
-                    <p id="professionDescription" style="margin-left: 8px;color:#7a7a7a; font-size:14px;">Cargo: </p>
-                    <p id="profession" style="margin-left: 8px;color:#7a7a7a; font-size:14px;"> 
-                    </p>
-                  </div>
-                  <div style="display:flex;" id="email-container">
-                    <i class="material-icons material-icons-outlined" id="emailIcon">email</i>
-                    <p id="emailDescription" style="margin-left: 8px;color:#7a7a7a; font-size:14px;">Correo: </p>
-                    <p id="email" style="margin-left: 8px;color:#7a7a7a; font-size:14px;"> 
-                    </p>
-                  </div>
-                  <div style="display:flex;" id="phone-container">
-                    <i class="material-icons" id="phoneIcon">phone</i>
-                    <p id="phoneDescription" style="margin-left: 8px;color:#7a7a7a; font-size:14px;">Teléfono: </p>
-                    <p id="mn" style="margin-left: 8px; color:#7a7a7a; font-size:14px;"> 
-                    </p>
-                  </div>
-                  
-                  <div style="display:flex;" id="birthday-container">
-                    <i class="material-icons" id="birthdayIcon">cake</i>
-                    <p id="birthdayDescription" style="margin-left: 8px;color:#7a7a7a; font-size:14px;">Cumpleaños: </p>
-                    <p id="bd" style="margin-left: 8px; color:#7a7a7a; font-size:14px;"> 
-                    </p>
-                  </div>
-                  
-<!--                   <div style="display:flex;">
-                    <i class="material-icons">flag</i>
-                    <p id="country" style="margin-left: 8px;"> 
-                    </p>
-                  </div> -->
-
+              <p id="nochosen" class="text-primary" style="margin-top: -15px;">
+                &lt-- Select a user from the list
+              </p>
+            </div>
+          
+            <div class="" style="width: 55%; margin-left: 25%;">
+              <div class="box" id="name-container">
+                <i class="material-icons" style="margin-top: 56px;margin-bottom: 26px;" id="nameIcon">person</i>
+                <p id="nameDescription" style="margin-left: 8px;color:#7a7a7a; font-size:18px; margin-top: 54px;margin-bottom: 26px;">Nombre: </p>
+                <p id="full-name" class="" style="margin-left: 8px; margin-top: 54px;margin-bottom: 26px; color: #474747; font-size:18px;">
+                </p>
               </div>
+                
+              <div class="box" id="profession-container">
+                <i class="material-icons" style="margin-bottom: 16px;" id="professionIcon">work</i>
+                <p id="professionDescription" style="margin-left: 8px;color:#7a7a7a; font-size:14px;">Cargo: </p>
+                <p id="profession" style="margin-left: 8px;color:#7a7a7a; font-size:14px;"> 
+                </p>
+              </div>
+              <div class="box" id="email-container">
+                <i class="material-icons material-icons-outlined" style="margin-bottom: 16px;" id="emailIcon">email</i>
+                <p id="emailDescription" style="margin-left: 8px;color:#7a7a7a; font-size:14px;">Correo: </p>
+                <p id="email" style="margin-left: 8px;color:#7a7a7a; font-size:14px;"> 
+                </p>
+              </div>
+              <div class="box" id="phone-container">
+                <i class="material-icons" style="margin-bottom: 16px;" id="phoneIcon">phone</i>
+                <p id="phoneDescription" style="margin-left: 8px;color:#7a7a7a; font-size:14px;">Teléfono: </p>
+                <p id="mn" style="margin-left: 8px; color:#7a7a7a; font-size:14px;"> 
+                </p>
+              </div>
+              
+              <div class="box" id="birthday-container">
+                <i class="material-icons" style="margin-bottom: 16px;" id="birthdayIcon">cake</i>
+                <p id="birthdayDescription" style="margin-left: 8px;color:#7a7a7a; font-size:14px;">Cumpleaños: </p>
+                <p id="bd" style="margin-left: 8px; color:#7a7a7a; font-size:14px;"> 
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        
       </div>
     </div>
   </body>
@@ -454,7 +441,7 @@
 
 <style>
     #fullname {
-      width: 280px;
+      width: 100%;
       height: 40px;
       border-radius: 6px;
       border: 1px solid #E1DDEE;
@@ -488,14 +475,6 @@
       animation: ld-container 1.0638297872340425s linear infinite;
     }
 
-    .ld-blocks {
-      width: 700px;
-      height: 400px;
-      display: inline-block;
-      overflow: hidden;
-      background: #ffffff;
-    }
-
     .ld-container {
       width: 100%;
       height: 100%;
@@ -520,7 +499,7 @@
     }
     .list-group-item {
       display: flex;
-      width: 320px;
+      width: 100%;
       height: 72px;
       cursor: pointer;
       border: 0;
@@ -533,6 +512,11 @@
     .search-input {
       width: 50%;
       outline: none;
+    }
+    .box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   </style>
 
