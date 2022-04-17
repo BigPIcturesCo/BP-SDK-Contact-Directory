@@ -24,7 +24,7 @@
       <div class="" style="width: 664px; display:flex;">
         <div class="" style="width:320px;">
           <br>
-          <div class="row" style="padding-left: 24px;">
+          <div class="row" style="padding-left: 24px;" id="search-element">
             <div class="d-flex" style="position: relative;">
               <i 
                 class="material-icons"
@@ -36,7 +36,7 @@
                 id="fullname"
                 type="text"
                 class="form-control form-control-sm mr-1 search-input"
-                placeholder="Search"
+                placeholder="Buscar"
                 name="ipname"
               />
             </div>
@@ -68,27 +68,35 @@
                 </div>
              
                 <div class="" style="padding-left: 56px;">
-                  <p id="full-name" class="" style="margin-top: 54px;margin-bottom: 26px;;color: #474747; font-size:18px;">
+                  <div style="display:flex;" id="name-container">
+                    <i class="material-icons" style="margin-top: 56px;margin-bottom: 26px;" id="nameIcon">person</i>
+                    <p id="nameDescription" style="margin-left: 8px;color:#7a7a7a; font-size:18px; margin-top: 54px;margin-bottom: 26px;">Nombre: </p>
+                    <p id="full-name" class="" style="margin-left: 8px; margin-top: 54px;margin-bottom: 26px; color: #474747; font-size:18px;">
+                    </p>
+                  </div>
                     
-                  </p>
-                  <div style="display:flex;">
-                    <i class="material-icons">work</i>
+                  <div style="display:flex;" id="profession-container">
+                    <i class="material-icons" id="professionIcon">work</i>
+                    <p id="professionDescription" style="margin-left: 8px;color:#7a7a7a; font-size:14px;">Cargo: </p>
                     <p id="profession" style="margin-left: 8px;color:#7a7a7a; font-size:14px;"> 
                     </p>
                   </div>
-                  <div style="display:flex;">
-                    <i class="material-icons material-icons-outlined">email</i>
+                  <div style="display:flex;" id="email-container">
+                    <i class="material-icons material-icons-outlined" id="emailIcon">email</i>
+                    <p id="emailDescription" style="margin-left: 8px;color:#7a7a7a; font-size:14px;">Correo: </p>
                     <p id="email" style="margin-left: 8px;color:#7a7a7a; font-size:14px;"> 
                     </p>
                   </div>
-                  <div style="display:flex;">
-                    <i class="material-icons">phone_enabled</i>
+                  <div style="display:flex;" id="phone-container">
+                    <i class="material-icons" id="phoneIcon">phone</i>
+                    <p id="phoneDescription" style="margin-left: 8px;color:#7a7a7a; font-size:14px;">Teléfono: </p>
                     <p id="mn" style="margin-left: 8px; color:#7a7a7a; font-size:14px;"> 
                     </p>
                   </div>
                   
-                  <div style="display:flex;">
-                    <i class="material-icons">cake</i>
+                  <div style="display:flex;" id="birthday-container">
+                    <i class="material-icons" id="birthdayIcon">cake</i>
+                    <p id="birthdayDescription" style="margin-left: 8px;color:#7a7a7a; font-size:14px;">Cumpleaños: </p>
                     <p id="bd" style="margin-left: 8px; color:#7a7a7a; font-size:14px;"> 
                     </p>
                   </div>
@@ -134,12 +142,97 @@
 
         // return data
       }
+    function hideElementsByShowFields() {
+      if('{{showSearch}}' === 'false') {
+        $('#search-element').css('display', 'none');
+      }
+      if('{{showProfession}}' === 'false') {
+        $('#profession-container').css('display', 'none');
+      }
+      if ('{{showEmail}}' === 'false') {
+        $('#email-container').css('display', 'none');
+      }
+      if('{{showPhone}}' === 'false') {
+        $('#phone-container').css('display', 'none');
+      }
+      if('{{showBirthday}}' === 'false') {
+        $('#birthday-container').css('display', 'none');
+      } 
+    }
+    function hideIconsElementsByShowFieldsAndSetIcons() {
+      if('{{showNameIcon}}'=== 'false') {
+        $('#nameIcon').css('display', 'none');
+      } else {
+        if ('{{nameIcon}}') {
+          const nameIconElement = document.getElementById('nameIcon');
+          nameIconElement.textContent = '{{nameIcon}}';
+        }
+      }
+      if('{{showProfessionIcon}}' === 'false') {
+        $('#professionIcon').css('display', 'none');
+      } else {
+        if ('{{professionIcon}}') {
+          const nameIconElement = document.getElementById('professionIcon');
+          nameIconElement.textContent = '{{professionIcon}}';
+        }
+      }
+      if('{{showEmailIcon}}' === 'false') {
+        $('#emailIcon').css('display', 'none');
+      } else {
+        if ('{{emailIcon}}') {
+          const nameIconElement = document.getElementById('emailIcon');
+          nameIconElement.textContent = '{{emailIcon}}';
+        }
+      }
+      if('{{showPhoneIcon}}' === 'false') {
+        $('#phoneIcon').css('display', 'none');
+      } else {
+        if ('{{phoneIcon}}') {
+          const nameIconElement = document.getElementById('phoneIcon');
+          nameIconElement.textContent = '{{phoneIcon}}';
+        }
+      }
+      if('{{showBirthdayIcon}}' === 'false') {
+        $('#birthdayIcon').css('display', 'none');
+      } else {
+        if ('{{birthdayIcon}}') {
+          const nameIconElement = document.getElementById('birthdayIcon');
+          nameIconElement.textContent = '{{birthdayIcon}}';
+        }
+      }
+    }
+    function hideDescriptions() {
+      if('{{showNameDescription}}' === 'false') {
+        $('#nameDescription').css('display', 'none');
+      }
+      if('{{showProfessionDescription}}' === 'false') {
+        $('#professionDescription').css('display', 'none');
+      }
+      if('{{showEmailDescription}}' === 'false') {
+        $('#emailDescription').css('display', 'none');
+      }
+      if('{{showPhoneDescription}}' === 'false') {
+        $('#phoneDescription').css('display', 'none');
+      }
+      if('{{showBirthdayDescription}}' === 'false') {
+        $('#birthdayDescription').css('display', 'none');
+      }
+    }
+
+    function changeBackgroundColor() {
+      document.body.style.backgroundColor = '{{backgroundColor}}';
+      const root = document.querySelector(':root');
+      root.style.setProperty('--background-color', '{{backgroundColor}}');
+    }
 
     
     $(document).ready(async function() {
-
+      hideElementsByShowFields();
+      hideIconsElementsByShowFieldsAndSetIcons();
+      hideDescriptions();
+      changeBackgroundColor();
       const dataSet = await getData();
-    console.log(dataSet);
+      console.log(dataSet);
       const headers = dataSet.shift();
       const indexes = headers.reduce((indexObj, value, index) => {
         indexObj[value] = index;
@@ -268,22 +361,27 @@
    function renderContactList(list, indexes) {
      $('#contact-list').empty();
 
-     const nameIndex = indexes['{{fullnameColumn}}'];
-     const profIndex = indexes['{{professionColumn}}'];
-     const countryIndex = indexes['{{countryColumn}}'];
-     const birthdayindex = indexes['{{birthdayColumn}}'];
-     const emailIndex = indexes['{{emailColumn}}'];
-     const phoneIndex = indexes['{{phoneColumn}}'];
-     const picIndex = indexes['{{profilePicColumn}}'];
+     const nameCell = '{{fullnameColumn}}';
+     const profCell = '{{professionColumn}}';
+     const birthdayCell = '{{birthdayColumn}}';
+     const emailCell = '{{emailColumn}}';
+     const phoneCell = '{{phoneColumn}}';
+     const picCell = '{{profilePicColumn}}';
 
+     const orderedCells = [nameCell, profCell, birthdayCell, emailCell, phoneCell, picCell].sort();
 
+     const nameIndex = orderedCells.indexOf(nameCell);
+     const profIndex = orderedCells.indexOf(profCell);
+     const birthdayIndex = orderedCells.indexOf(birthdayCell);
+     const emailIndex = orderedCells.indexOf(emailCell);
+     const phoneIndex = orderedCells.indexOf(phoneCell);
+     const picIndex = orderedCells.indexOf(picCell);
      //Reference for test
     // ['First Name', 'Last Name', 'Directory', 'Email', 'Address', 'Phone Number', 'Country', 'Department', 'Skills & Expertise', 'Picture', 'About', 'Weight', 'Birth', 'date', 'Search'],
     
       //uncomment this for test
      // const nameIndex = 0;
      // const profIndex = 8;
-     // const countryIndex = 6;
      // const birthdayindex = 12;
      // const emailIndex = 3;
      // const phoneIndex = 5;
@@ -316,8 +414,8 @@
 
         selectUser(
           index,row, row[nameIndex], 
-          row[profIndex], row[countryIndex], 
-          row[birthdayindex], row[emailIndex], row[phoneIndex], url);
+          row[profIndex], 
+          row[birthdayIndex], row[emailIndex], row[phoneIndex], url);
       }); 
    } 
    function filterUser(value, dataSet, indexes) {
@@ -333,14 +431,17 @@
      
    }
 
-   function selectUser(index, row, fullname, pro, ctr, bd, email, mn,url) {
+   function selectUser(index, row, fullname, pro, bd, email, mn,url) {
           $("#nochosen").text("");
           $("#"+ index).click(function(){
           $(".list-group-item--selected").removeClass("list-group-item--selected");
           $("#"+ index).toggleClass('list-group-item--selected');
-          $("#full-name").text(`${fullname}`);
+          if('{{showName}}' === 'true') {
+            $("#full-name").text(`${fullname}`);
+          } else {
+            $('#nameIcon').css('display', 'none');
+          }
           $("#profession").text(`${pro}`);
-          $("#country").text(`${ctr}`);
           $("#bd").text(`${bd}`);
           $("#email").text(`${email}`);
           $("#mn").text(`${mn}`);
@@ -424,6 +525,7 @@
       cursor: pointer;
       border: 0;
       border-bottom: 1px solid #E1DDEE;
+      background-color: var(--background-color);
     }
     .list-group-item--selected {
       background-color: #f1f1f1;
