@@ -406,14 +406,21 @@
       }); 
    } 
    function filterUser(value, dataSet, indexes) {
-     const searchTerm = value.toLowerCase();
-     const filtered = dataSet.filter(row => {
-       const fullName = `${row[0].toLowerCase()} ${row[1].toLowerCase()}`;
+      const nameCell = '{{fullnameColumn}}';
+      const profCell = '{{professionColumn}}';
+      const birthdayCell = '{{birthdayColumn}}';
+      const emailCell = '{{emailColumn}}';
+      const phoneCell = '{{phoneColumn}}';
+      const picCell = '{{profilePicColumn}}';
+      const orderedCells = [nameCell, profCell, birthdayCell, emailCell, phoneCell, picCell].sort();
+      const nameIndex = orderedCells.indexOf(nameCell);
+      const searchTerm = value.toLowerCase();
+      const filtered = dataSet.filter(row => {
+        const fullName = `${row[nameIndex].toLowerCase()}`;
        
-       return fullName.indexOf(value) !== -1;
-     })
-     console.log(filtered);
-     renderContactList(filtered, indexes);
+        return fullName.indexOf(searchTerm) !== -1;
+      })
+      renderContactList(filtered, indexes);
      
      
    }
