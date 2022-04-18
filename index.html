@@ -443,7 +443,8 @@
           } else {
             $('#nameIcon').css('display', 'none');
             $('#nameDescription').css('display', 'none');
-            $('#name-container').css('display', 'none');
+            $('#full-name').css('display', 'none');
+            $('#profession-container').addClass('space');
           }
           $("#profession").text(`${pro}`);
           $("#bd").text(`${bd}`);
@@ -534,6 +535,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    .space {
+      margin-top: 50px;
     }
   </style>
 
