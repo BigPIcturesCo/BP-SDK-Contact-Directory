@@ -135,15 +135,23 @@
       }
       if('{{showProfession}}' === 'false') {
         $('#profession-container').css('display', 'none');
+        $('#professionIcon').css('display', 'none');
+        $('#professionDescription').css('display', 'none');
       }
       if ('{{showEmail}}' === 'false') {
         $('#email-container').css('display', 'none');
+        $('#emailIcon').css('display', 'none');
+        $('#emailDescription').css('display', 'none');
       }
       if('{{showPhone}}' === 'false') {
         $('#phone-container').css('display', 'none');
+        $('#phoneIcon').css('display', 'none');
+        $('#phoneDescription').css('display', 'none');
       }
       if('{{showBirthday}}' === 'false') {
         $('#birthday-container').css('display', 'none');
+        $('#birthdayIcon').css('display', 'none');
+        $('#birthdayDescription').css('display', 'none');
       } 
     }
     function hideIconsElementsByShowFieldsAndSetIcons() {
@@ -434,6 +442,8 @@
             $("#full-name").text(`${fullname}`);
           } else {
             $('#nameIcon').css('display', 'none');
+            $('#nameDescription').css('display', 'none');
+            $('#name-container').css('display', 'none');
           }
           $("#profession").text(`${pro}`);
           $("#bd").text(`${bd}`);
