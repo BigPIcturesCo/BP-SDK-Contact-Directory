@@ -65,34 +65,34 @@
             <div class="" style="width: 55%; margin-left: 25%;">
               <div class="box" id="name-container">
                 <i class="material-icons" style="margin-top: 56px;margin-bottom: 26px;" id="nameIcon">person</i>
-                <p id="nameDescription" style="margin-left: 8px;color:#7a7a7a; font-size:18px; margin-top: 54px;margin-bottom: 26px;">Nombre: </p>
-                <p id="full-name" class="" style="margin-left: 8px; margin-top: 54px;margin-bottom: 26px; color: #474747; font-size:18px;">
+                <p id="nameDescription" style="margin-left: 8px; margin-top: 54px; margin-bottom: 26px;" class="description-name-format">Nombre: </p>
+                <p id="full-name" style="margin-left: 8px; margin-top: 54px;margin-bottom: 26px;" class="data-name-format">
                 </p>
               </div>
                 
               <div class="box" id="profession-container">
                 <i class="material-icons" style="margin-bottom: 16px;" id="professionIcon">work</i>
-                <p id="professionDescription" style="margin-left: 8px;color:#7a7a7a; font-size:14px;">Cargo: </p>
-                <p id="profession" style="margin-left: 8px;color:#7a7a7a; font-size:14px;"> 
+                <p id="professionDescription" style="margin-left: 8px;" class="columns-letter-format">Cargo: </p>
+                <p id="profession" style="margin-left: 8px;" class="columns-letter-format"> 
                 </p>
               </div>
               <div class="box" id="email-container">
                 <i class="material-icons material-icons-outlined" style="margin-bottom: 16px;" id="emailIcon">email</i>
-                <p id="emailDescription" style="margin-left: 8px;color:#7a7a7a; font-size:14px;">Correo: </p>
-                <p id="email" style="margin-left: 8px;color:#7a7a7a; font-size:14px;"> 
+                <p id="emailDescription" style="margin-left: 8px;" class="columns-letter-format">Correo: </p>
+                <p id="email" style="margin-left: 8px;" class="columns-letter-format"> 
                 </p>
               </div>
               <div class="box" id="phone-container">
                 <i class="material-icons" style="margin-bottom: 16px;" id="phoneIcon">phone</i>
-                <p id="phoneDescription" style="margin-left: 8px;color:#7a7a7a; font-size:14px;">Teléfono: </p>
-                <p id="mn" style="margin-left: 8px; color:#7a7a7a; font-size:14px;"> 
+                <p id="phoneDescription" style="margin-left: 8px;" class="columns-letter-format">Teléfono: </p>
+                <p id="mn" style="margin-left: 8px;" class="columns-letter-format"> 
                 </p>
               </div>
               
               <div class="box" id="birthday-container">
                 <i class="material-icons" style="margin-bottom: 16px;" id="birthdayIcon">cake</i>
-                <p id="birthdayDescription" style="margin-left: 8px;color:#7a7a7a; font-size:14px;">Cumpleaños: </p>
-                <p id="bd" style="margin-left: 8px; color:#7a7a7a; font-size:14px;"> 
+                <p id="birthdayDescription" style="margin-left: 8px;" class="columns-letter-format">Cumpleaños: </p>
+                <p id="bd" style="margin-left: 8px;" class="columns-letter-format"> 
                 </p>
               </div>
             </div>
@@ -398,10 +398,10 @@
               style="background-color: white; border-radius:50%; object-fit: cover"; 
               margin-bottom: -5px;"> 
             <section style="padding-left: 16px;">
-              <span class="" style="color: #7a7a7a; font-size:14px;">
+              <span class="name-in-contact-list-format">
                 ${row[nameIndex]}
               </span>
-              <p style="color: #b3b3b3; font-size:13px;">
+              <p class="email-in-contact-list-format" style="transform: translate(0px, -12px);">
                 ${row[emailIndex]}
               </p>
             <section>
@@ -538,6 +538,39 @@
     }
     .space {
       margin-top: 50px;
+    }
+
+    .columns-letter-format {
+      font: normal normal normal 12px/25px Inter;
+      letter-spacing: 0px;
+      color: #7A7A7A;
+      opacity: 1;
+    }
+
+    .data-name-format {
+      font: normal normal 500 13px/25px Inter;
+      letter-spacing: 0px;
+      color: #000000;
+    }
+
+    .description-name-format {
+      font: normal normal 300 13px/25px Inter;
+      letter-spacing: 0px;
+      color: #000000;
+    }
+
+    .name-in-contact-list-format {
+      font: normal normal 500 11px/25px Inter;
+      letter-spacing: 0px;
+      color: #7A7A7A;
+      opacity: 1;
+    }
+
+    .email-in-contact-list-format {
+      font: normal normal normal 10px/25px Inter;
+      letter-spacing: 0px;
+      color: #B3B3B3;
+      opacity: 1;
     }
   </style>
 
